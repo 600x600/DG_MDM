@@ -72,7 +72,7 @@ def save_if_changed(new_data):
         print("No data collected from the websites.")
         return
 
-    file_path = "data.json"
+    file_path = "web_scraping/rawData.json"
     
     if os.path.exists(file_path):
         with open(file_path, 'r', encoding='utf-8') as f:
