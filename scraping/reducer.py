@@ -48,5 +48,6 @@ def process_weather_data(input_path='scraping/rawData.json', output_path='scrapi
         
     print(f"json file updated!")
 
+#"Am I the main script being run right now?"
 if __name__ == '__main__':
     process_weather_data()
