@@ -62,7 +62,7 @@ def scrape_data():
             scraped_data["apambiente"].append(apambiente_metrics)
             
     except Exception as e:
-        print(f"Error scraping Apambiente: {e}")
+        print(f"error scraping Apambiente: {e}")
 
    # ---> IPMA !!!
     try:
@@ -86,22 +86,24 @@ def scrape_data():
                 scraped_data["ipma"].append({
                     "Hora": hora,
                     "Ondulacao": cells[2].text.strip(),
+                    "Periodo Onda": cells[4].text.strip(),
+                    "Escala de Beaufort": cells[8].text.strip(),
                     "Temperatura": cells[9].text.strip()  
                 })
                 
     except Exception as e:
-        print(f"Error scraping IPMA: {e}")
+        print(f"error scraping IPMA: {e}")
 
     #check if anything was actually collected before proceeding
     if not scraped_data["apambiente"] and not scraped_data["ipma"]:
         return {}
 
-    print(scraped_data)
+    # print(scraped_data)
     return scraped_data
 
 def save_if_changed(new_data):
     if not new_data:
-        print("No data collected from the websites.")
+        print("no data collected from the websites.")
         return
 
     file_path = "scraping/rawData.json"
@@ -118,9 +120,9 @@ def save_if_changed(new_data):
     if old_data != new_data:
         with open(file_path, 'w', encoding='utf-8') as f:
             json.dump(new_data, f, indent=4, ensure_ascii=False)
-        print("Data updated!")
+        print("data updated!")
     else:
-        print("No changes detected.")
+        print("no changes detected.")
 
 #run
 current_data = scrape_data()
