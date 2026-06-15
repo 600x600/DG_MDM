@@ -49,6 +49,7 @@ PShape fins1, fins2;
 PShape tail1, tail2;
 PShape chosen_body, chosen_fins, chosen_tail;
 float fish_speed;
+float yPos;
 
 //---
 
@@ -98,7 +99,9 @@ void draw() {
   }
 
   float soundVolume = amp.analyze();
-  fish_speed = map(soundVolume, 0, 1, 1.2, 6);
+  float target_speed = map(soundVolume, 0, 1, 1.2, 30);
+  fish_speed = lerp(fish_speed, target_speed, 0.1);
+  //fish_speed = map(soundVolume, 0, 1, 1.2, 6);
 
   // Draw animation on a (offscreen) canvas
   canvas.beginDraw();
@@ -118,7 +121,10 @@ void draw() {
     fish_obj.display(canvas);
 
     if (fish_obj.isOffScreen(canvasWidth)) {
-      fish_obj = new Fish(chosen_body, chosen_fins, chosen_tail, c1, c2, c3, fish_speed);
+
+      yPos = random(1, 10);
+      println("recalculated yPos: ", yPos);
+      fish_obj = new Fish(chosen_body, chosen_fins, chosen_tail, c1, c2, c3, fish_speed, yPos);
       fish_obj.loadAndCHoose();
     }
   }
@@ -145,7 +151,9 @@ void update() {
       receiver.getData(json);
       receiver.getValues();
 
-      fish_obj = new Fish(chosen_body, chosen_fins, chosen_tail, c1, c2, c3, fish_speed);
+      yPos = random(1, 10);
+      println("recalculated yPos: ", yPos);
+      fish_obj = new Fish(chosen_body, chosen_fins, chosen_tail, c1, c2, c3, fish_speed, yPos);
       fish_obj.loadAndCHoose();
 
       count++;

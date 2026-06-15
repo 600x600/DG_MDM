@@ -2,16 +2,12 @@ class Fish {
   float x, y;
   int size;
   float speed;
-
   PShape b, f, t;
-
   color c1, c2, c3;
-
   PShape full_fish;
-
   float totalFishWidth;
 
-  Fish(PShape body, PShape fins, PShape tail, color color1, color color2, color color3, float chosen_speed) {
+  Fish(PShape body, PShape fins, PShape tail, color color1, color color2, color color3, float chosen_speed, float yPos) {
     b = body;
     f = fins;
     t = tail;
@@ -21,6 +17,7 @@ class Fish {
     c3 = color3;
 
     speed = chosen_speed;
+    y = yPos;
   }
 
   void loadAndCHoose() {
@@ -66,7 +63,7 @@ class Fish {
     c.pushMatrix();
 
     //move to canvas x, y
-    c.translate(x, 5);
+    c.translate(x, y);
 
     //control size with scale()
     c.scale(0.1);
