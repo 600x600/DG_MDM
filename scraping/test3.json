@@ -1,0 +1,35 @@
+{
+    "date": "15 junho 2026",
+    "time": "21:00",
+    "aguieira": [
+        {
+            "Volume armazenado": "50",
+            "Cota": "123.56",
+            "Caudal Afluente": "20",
+            "Caudal Efluente": "730"
+        }
+    ],
+    "raiva": [
+        {
+            "Volume armazenado": "91",
+            "Cota": "60.98",
+            "Caudal Afluente": "329.16",
+            "Caudal Efluente": "0"
+        }
+    ],
+    "coimbra": [
+        {
+            "Cota": "18.8",
+            "Caudal Afluente": "7",
+            "Caudal Efluente": "110"
+        }
+    ],
+    "figueira": [
+        {
+            "Ondulacao": "1.0",
+            "Periodo Onda": "3.9",
+            "Periodo Pico": "7.9",
+            "Temperatura": "17.1"
+        }
+    ]
+}
