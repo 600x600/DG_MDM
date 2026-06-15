@@ -221,5 +221,12 @@ def save_if_changed(new_data):
         print("no changes detected.")
 
 #run
-current_data = scrape_data()
-save_if_changed(current_data)
+#urrent_data = scrape_data()
+#save_if_changed(current_data)
+
+def process_scraping():
+    current_data = scrape_data()
+    save_if_changed(current_data)
+
+if __name__ == '__main__':
+    process_scraping()
