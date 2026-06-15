@@ -80,4 +80,40 @@ class Fish {
 
     c.popMatrix();
   }
+
+  void exportToSVG(String filename) {
+    //How it should be in VSCode:
+    //String outputPath = "../web_DG/shapes/" + filename + ".svg";
+    
+    String outputPath = "../web_DG/shapes/" + filename + ".svg";
+
+    int svgWidth = ceil((t.width + b.width) * 1.5);
+    int svgHeight = ceil(b.height * 2);
+
+    if (svgWidth <= 0) svgWidth = 500;
+    if (svgHeight <= 0) svgHeight = 300;
+
+    PGraphics svg = createGraphics(svgWidth, svgHeight, SVG, outputPath);
+
+    svg.beginDraw();
+    svg.pushMatrix();
+
+    svg.translate(totalFishWidth * 0.1, svgHeight / 2);
+    svg.noStroke();
+
+    svg.fill(c1);
+    svg.shape(full_fish.getChild(0), 0, 0); // tail
+
+    svg.fill(c2);
+    svg.shape(full_fish.getChild(1), 0, 0); // body
+
+    svg.fill(c3);
+    svg.shape(full_fish.getChild(2), 0, 0); // fins
+
+    svg.popMatrix();
+    svg.endDraw();
+    svg.dispose(); // Crucial to finalize and save the file cleanly
+
+    //println("Saved fish SVG to: " + outputPath);
+  }
 }
