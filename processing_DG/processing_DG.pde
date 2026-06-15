@@ -140,7 +140,7 @@ void draw() {
 
 
 void update() {
-  json = loadJSONObject("data.json");
+  json = loadJSONObject("../scraping/useableData.json"); 
 
   if (json != null) {
     String currentTime = json.getString("time");
