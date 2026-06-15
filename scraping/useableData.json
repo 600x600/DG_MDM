@@ -1,19 +1,19 @@
 {
     "date": "13 junho 2026",
-    "time": "10:00",
+    "time": "20:00",
     "apambiente": [
         {
-            "Cota": "17.98",
-            "Caudal Afluente": "13.83",
-            "Caudal Efluente": "13.84"
+            "Cota": "17.77",
+            "Caudal Afluente": "9.89",
+            "Caudal Efluente": "9.9"
         }
     ],
     "ipma": [
         {
-            "Ondulacao": "1.1",
-            "Periodo Onda": "7.9",
-            "Escala de Beaufort": "3",
-            "Temperatura": "16.1"
+            "Ondulacao": "1.3",
+            "Periodo Onda": "7.1",
+            "Periodo Pico": "11.4",
+            "Temperatura": "16.4"
         }
     ]
 }

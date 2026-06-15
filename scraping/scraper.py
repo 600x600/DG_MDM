@@ -87,7 +87,7 @@ def scrape_data():
                     "Hora": hora,
                     "Ondulacao": cells[2].text.strip(),
                     "Periodo Onda": cells[4].text.strip(),
-                    "Escala de Beaufort": cells[8].text.strip(),
+                    "Periodo Pico": cells[5].text.strip(),
                     "Temperatura": cells[9].text.strip()  
                 })
                 
