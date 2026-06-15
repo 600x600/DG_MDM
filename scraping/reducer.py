@@ -12,35 +12,42 @@ def process_weather_data(input_path='scraping/rawData.json', output_path='scrapi
         print("error: json syntax issue")
         return
 
-    if not data.get('apambiente'):
-        print("error: apambiente info empty")
+    if not data.get('aguieira'):
+        print("error: aguieira info empty")
         return
         
-    apa_info = data['apambiente'][0]
-    data_ref = apa_info.get('Data')
-    hora_ref = apa_info.get('Hora')  
-
-    apa_cleaned = {k: v for k, v in apa_info.items() if k not in ['Data', 'Hora']}
+    aguieira_info = data['aguieira'][0]
+    data_ref = aguieira_info.get('Data')
+    hora_ref = aguieira_info.get('Hora')  
+    
+    raiva_info = data['raiva'][0]
+    coimbra_info = data['coimbra'][0]
+    
+    aguieira_cleaned = {k: v for k, v in aguieira_info.items() if k not in ['Data', 'Hora']}
+    raiva_cleaned = {k: v for k, v in raiva_info.items() if k not in ['Data', 'Hora']}
+    coimbra_cleaned = {k: v for k, v in coimbra_info.items() if k not in ['Data', 'Hora']}
 
     try:
         hora_numerica = int(hora_ref.split(':')[0])
-        hora_ipma_target = f"{hora_numerica:02d}h"
+        hora_figueira_target = f"{hora_numerica:02d}h"
     except (ValueError, IndexError, AttributeError):
-        print(f"error: apambiente time format invalid '{hora_ref}'")
+        print(f"error: aguieira time format invalid '{hora_ref}'")
         return
     
-    ipma_filtered = []
-    for item in data.get('ipma', []):
-        if item.get('Hora') == hora_ipma_target:
-            ipma_cleaned = {k: v for k, v in item.items() if k != 'Hora'}
-            ipma_filtered.append(ipma_cleaned)
+    figueira_filtered = []
+    for item in data.get('figueira', []):
+        if item.get('Hora') == hora_figueira_target:
+            figueira_cleaned = {k: v for k, v in item.items() if k != 'Hora'}
+            figueira_filtered.append(figueira_cleaned)
             break  
 
     usable_data = {
         "date": data_ref,
         "time": hora_ref,
-        "apambiente": [apa_cleaned],
-        "ipma": ipma_filtered
+        "aguieira": [aguieira_cleaned],
+        "raiva": [raiva_cleaned],
+        "coimbra": [coimbra_cleaned],
+        "figueira": figueira_filtered
     }
 
     with open(output_path, 'w', encoding='utf-8') as file:

@@ -4,30 +4,34 @@ import re
 import json
 import os
 
-#apambiente & ipma URLs
+#coimbra & figueira URLs
 URLS = {
-    "apambiente": "https://infoagua.apambiente.pt/pt/cheias/cheia-detalhe/1627743374",
-    "ipma": "https://www.ipma.pt/pt/maritima/costeira/index.jsp?selLocal=33&idLocal=33&print=true" #IPMA's direct raw data feed
+    "aguieira": "https://infoagua.apambiente.pt/pt/cheias/cheia-detalhe/1627743384", #aguieira Mondego
+    "raiva": "https://infoagua.apambiente.pt/pt/cheias/cheia-detalhe/1627759328", #raiva Mondego
+    "coimbra": "https://infoagua.apambiente.pt/pt/cheias/cheia-detalhe/1627743374", #coimbra Mondego
+    "figueira": "https://www.figueira.pt/pt/maritima/costeira/index.jsp?selLocal=33&idLocal=33&print=true" #figueira's direct raw data feed
 }
 
 def scrape_data():
     #data.json structure
     scraped_data = {
-        "apambiente": [],
-        "ipma": []
+        "aguieira": [],
+        "raiva": [],
+        "coimbra": [],
+        "figueira": []
     }
     headers = {'User-Agent': 'Mozilla/5.0'}
     
-    # ---> APAMBIENTE !!!
+    # ---> aguieira !!!
     try:
-        response1 = requests.get(URLS["apambiente"], headers=headers)
+        response1 = requests.get(URLS["aguieira"], headers=headers)
         soup1 = BeautifulSoup(response1.text, 'html.parser')
-        selector1 = ".right-header-column .text-container:nth-of-type(n+2)"
+        selector1 = ".right-header-column .text-container"
         selector2 = ".right-header-column .additional-info .text-container" 
         info_containers = soup1.select(selector1) 
         dateTime_containers = soup1.select(selector2) 
         
-        apambiente_metrics = {}
+        aguieira_metrics = {}
         for container in info_containers:
             title_element = container.select_one(".title")
             value_element = container.select_one(".value")
@@ -35,7 +39,7 @@ def scrape_data():
                 title = title_element.text.strip()
                 numeric_match = re.findall(r"[-+]?\d*\.\d+|\d+", value_element.text) #only numbers no text and stuff
                 if numeric_match:
-                    apambiente_metrics[title] = numeric_match[0]
+                    aguieira_metrics[title] = numeric_match[0]
                     
         for container in dateTime_containers:
             date_element = container.select_one(".title")
@@ -52,21 +56,113 @@ def scrape_data():
                 time_match = re.search(r"\d{2}:\d{2}", time_text)
                 
                 if date_match:
-                    apambiente_metrics[title1] = date_match.group()
+                    aguieira_metrics[title1] = date_match.group()
                     
                 if time_match:
-                    apambiente_metrics[title2] = time_match.group()
+                    aguieira_metrics[title2] = time_match.group()
                     
         
-        if apambiente_metrics:
-            scraped_data["apambiente"].append(apambiente_metrics)
+        if aguieira_metrics:
+            scraped_data["aguieira"].append(aguieira_metrics)
             
     except Exception as e:
-        print(f"error scraping Apambiente: {e}")
-
-   # ---> IPMA !!!
+        print(f"error scraping aguieira: {e}") 
+        
+        # ---> raiva !!!
     try:
-        response2 = requests.get(URLS["ipma"], headers=headers)
+        response1 = requests.get(URLS["raiva"], headers=headers)
+        soup1 = BeautifulSoup(response1.text, 'html.parser')
+        selector1 = ".right-header-column .text-container"
+        selector2 = ".right-header-column .additional-info .text-container" 
+        info_containers = soup1.select(selector1) 
+        dateTime_containers = soup1.select(selector2) 
+        
+        raiva_metrics = {}
+        for container in info_containers:
+            title_element = container.select_one(".title")
+            value_element = container.select_one(".value")
+            if title_element and value_element:
+                title = title_element.text.strip()
+                numeric_match = re.findall(r"[-+]?\d*\.\d+|\d+", value_element.text) #only numbers no text and stuff
+                if numeric_match:
+                    raiva_metrics[title] = numeric_match[0]
+                    
+        for container in dateTime_containers:
+            date_element = container.select_one(".title")
+            time_element = container.select_one(".text")
+            
+            if date_element and time_element:
+                title1 = "Data"
+                title2 = "Hora"
+                
+                date_text = date_element.text.strip()
+                time_text = time_element.text.strip()
+                
+                date_match = re.search(r"\d+\s+[a-zA-Zçíúâêôãõáéó]+\s+\d+", date_text) 
+                time_match = re.search(r"\d{2}:\d{2}", time_text)
+                
+                if date_match:
+                    raiva_metrics[title1] = date_match.group()
+                    
+                if time_match:
+                    raiva_metrics[title2] = time_match.group()
+                    
+        
+        if raiva_metrics:
+            scraped_data["raiva"].append(raiva_metrics)
+            
+    except Exception as e:
+        print(f"error scraping raiva: {e}")
+    
+    # ---> coimbra !!!
+    try:
+        response1 = requests.get(URLS["coimbra"], headers=headers)
+        soup1 = BeautifulSoup(response1.text, 'html.parser')
+        selector1 = ".right-header-column .text-container:nth-of-type(n+2)"
+        selector2 = ".right-header-column .additional-info .text-container" 
+        info_containers = soup1.select(selector1) 
+        dateTime_containers = soup1.select(selector2) 
+        
+        coimbra_metrics = {}
+        for container in info_containers:
+            title_element = container.select_one(".title")
+            value_element = container.select_one(".value")
+            if title_element and value_element:
+                title = title_element.text.strip()
+                numeric_match = re.findall(r"[-+]?\d*\.\d+|\d+", value_element.text) #only numbers no text and stuff
+                if numeric_match:
+                    coimbra_metrics[title] = numeric_match[0]
+                    
+        for container in dateTime_containers:
+            date_element = container.select_one(".title")
+            time_element = container.select_one(".text")
+            
+            if date_element and time_element:
+                title1 = "Data"
+                title2 = "Hora"
+                
+                date_text = date_element.text.strip()
+                time_text = time_element.text.strip()
+                
+                date_match = re.search(r"\d+\s+[a-zA-Zçíúâêôãõáéó]+\s+\d+", date_text) 
+                time_match = re.search(r"\d{2}:\d{2}", time_text)
+                
+                if date_match:
+                    coimbra_metrics[title1] = date_match.group()
+                    
+                if time_match:
+                    coimbra_metrics[title2] = time_match.group()
+                    
+        
+        if coimbra_metrics:
+            scraped_data["coimbra"].append(coimbra_metrics)
+            
+    except Exception as e:
+        print(f"error scraping coimbra: {e}")
+
+   # ---> figueira !!!
+    try:
+        response2 = requests.get(URLS["figueira"], headers=headers)
         soup2 = BeautifulSoup(response2.text, 'html.parser')
         
         table_rows = soup2.select('table.tablelist tr[class^="bkg_"]')
@@ -83,7 +179,7 @@ def scrape_data():
                 
                 seen_hours.add(hora)
                 
-                scraped_data["ipma"].append({
+                scraped_data["figueira"].append({
                     "Hora": hora,
                     "Ondulacao": cells[2].text.strip(),
                     "Periodo Onda": cells[4].text.strip(),
@@ -92,10 +188,10 @@ def scrape_data():
                 })
                 
     except Exception as e:
-        print(f"error scraping IPMA: {e}")
+        print(f"error scraping figueira: {e}")
 
     #check if anything was actually collected before proceeding
-    if not scraped_data["apambiente"] and not scraped_data["ipma"]:
+    if not scraped_data["coimbra"] and not scraped_data["figueira"]:
         return {}
 
     # print(scraped_data)
