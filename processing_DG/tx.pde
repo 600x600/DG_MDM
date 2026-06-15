@@ -48,7 +48,7 @@ class Tx {
   boolean isConnected() {
     return connected;
   }
-  
+
   boolean send(PImage img) {
     if (!connected) tryReconnect();
     if (!connected) return false;

@@ -1,52 +1,86 @@
-int var1, var2, var3, var4, var5, var7;
-PVector var6;
-
 class Fish {
-  PVector pos, speed, origin;
+  float x, y;
+  int size;
+  float speed;
 
-  Fish(int x, int y) {
-    pos = new PVector(x, y);
-    origin = pos.copy();
-    speed = new PVector(0, 0);
-    var5 = y;
+  PShape b, f, t;
+
+  color c1, c2, c3;
+
+  PShape full_fish;
+
+  float totalFishWidth;
+
+  Fish(PShape body, PShape fins, PShape tail, color color1, color color2, color color3, float chosen_speed) {
+    b = body;
+    f = fins;
+    t = tail;
+
+    c1 = color1;
+    c2 = color2;
+    c3 = color3;
+
+    speed = chosen_speed;
   }
 
-  void define() {
-    var1 = int(random(20, 100));
-    var2 = int(random(var1/4, var1/2));
-    var3 = int(random(var1/3, var1 - var1/5));
-    var4 = int(random(var1/5, var3));
-    float spd = random(3, 7);
-    var6 = new PVector(spd, 0);
-    speed = var6;
+  void loadAndCHoose() {
+    t.disableStyle();
+    b.disableStyle();
+    f.disableStyle();
+
+    t.fill(c1);
+    b.fill(c2);
+    f.fill(c3);
+
+    full_fish = createShape(GROUP);
+
+    //tail at 0,0 position
+    full_fish.addChild(t);
+
+    //to safely move stuff without breaking it:
+    b.resetMatrix();
+    b.translate(t.width, 0);
+
+    //adding the body
+    full_fish.addChild(b);
+
+    //to safely move stuff without breaking it:
+    f.resetMatrix();
+    f.translate(t.width + t.width/2, -t.width/4);
+
+    full_fish.addChild(f);
+
+    totalFishWidth = t.width + b.width;
+    x = -(totalFishWidth * 0.2);
   }
 
-  void create() {
-    PShape fish = createShape();
-    fish.beginShape();
-    fish.noStroke();
-    fish.fill(accent);
-    fish.vertex(0, 0);
-    fish.vertex(var4, var2);
-    fish.vertex(var3, var2);
-    fish.vertex(var1, var2/2);
-    fish.vertex(var3, 0);
-    fish.vertex(var4, 0);
-    fish.vertex(0, var2);
-    fish.endShape();
+  void swim() {
+    x += speed;
   }
 
-  void move() {
-    pos.x += var6.x;
+  boolean isOffScreen(int maxCanvasWidth) {
+    return x > maxCanvasWidth;
   }
 
-  void logVars() {
-    println(var1);
-    println(var2);
-    println(var3);
-    println(var4);
-    println(var5);
-    println(var6);
-    println(var7);
+  void display(PGraphics c) {
+    c.pushMatrix();
+
+    //move to canvas x, y
+    c.translate(x, 5);
+
+    //control size with scale()
+    c.scale(0.1);
+    c.noStroke();
+
+    c.fill(c1);
+    c.shape(full_fish.getChild(0), 0, 0); //tail = color c1
+
+    c.fill(c2);
+    c.shape(full_fish.getChild(1), 0, 0); //body = color c2
+
+    c.fill(c3);
+    c.shape(full_fish.getChild(2), 0, 0); //fins = color c3
+
+    c.popMatrix();
   }
 }

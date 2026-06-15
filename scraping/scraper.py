@@ -9,7 +9,7 @@ URLS = {
     "aguieira": "https://infoagua.apambiente.pt/pt/cheias/cheia-detalhe/1627743384", #aguieira Mondego
     "raiva": "https://infoagua.apambiente.pt/pt/cheias/cheia-detalhe/1627759328", #raiva Mondego
     "coimbra": "https://infoagua.apambiente.pt/pt/cheias/cheia-detalhe/1627743374", #coimbra Mondego
-    "figueira": "https://www.figueira.pt/pt/maritima/costeira/index.jsp?selLocal=33&idLocal=33&print=true" #figueira's direct raw data feed
+    "figueira": "https://www.ipma.pt/pt/maritima/costeira/index.jsp?selLocal=33&idLocal=33&print=true" #direct official IPMA feed
 }
 
 def scrape_data():
