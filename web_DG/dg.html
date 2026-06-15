@@ -14,24 +14,23 @@
   </head>
 
   <body>
+    <div id="bg-img"></div>
+    <img src="shapes/fish_18_00.svg" id="fih">
     <div class="app">
       <div class="header">
-        <h2 class="data">13/06/2026</h2>
-        <h2 class="hora">12:00</h2>
+        <h2 id="dia_de_hoje"></h2>
+        <h2 id="hora"></h2>
       </div>
 
       <button class="botaogrande">
         <img src="assets/botao.webp" class="botao" alt="Controlo" />
       </button>
 
-      <!--<div class="modo-container">
-        <span class="modo-label">MODO:</span>
-        <button class="modo">
-            <img src="assets/botaorio.webp" class="modorio" alt="Rio">
-        </button>
-    </div>
+      <div class="modo-container">
+        <span class="modo-label"></span>
+      </div>
 
-   <div class="addfish">
+      <!--<div class="addfish">
         <img src="assets/peixinho.webp" class="peixinho" alt="Peixe">
         <button class="criarpeixe-btn">
             <img src="assets/criarpeixe.webp" class="criarpeixe-img" alt="Criar peixe">
@@ -45,9 +44,21 @@
           alt="Barra de informação"
         />
         <div class="info-text">
-          <span>CAUDAL AFLUENTE: 13 m³/s</span>
-          <span>CAUDAL EFLUENTE: 10 m³/s</span>
-          <span>COTA: 17 m</span>
+          <span id="info1">
+            <p>CAUDAL AFLUENTE:</p>
+            <p id="caudal_afluente"></p>
+            <p>m3/s</p>
+
+            <!-- <span id="info3">
+                <p>CORRESPONDE A:</p>
+                <p id="peixe_caracteristica"></p>
+              </span>-->
+          </span>
+          <span id="info2">
+            <p>CAUDAL EFLUENTE:</p>
+            <p id="caudal_efluente"></p>
+            <p>m3/s</p>
+          </span>
         </div>
       </div>
     </div>

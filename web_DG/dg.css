@@ -1,152 +1,169 @@
 @font-face {
-    font-family: 'Iosevka Charon';
-    src: url('assets/IosevkaCharon-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-html {
-    background-color: darkblue;
+  font-family: "Iosevka Charon";
+  src: url("assets/IosevkaCharon-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
-    background-image: url("background.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: 'Iosevka Charon', monospace;
+  margin: 0;
+  min-height: 100vh;
+  background-image: url("background.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Iosevka Charon", monospace;
 }
 
 .app {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50px;
 }
 
-.data,
-.hora {
-    margin: 0;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 400;
+#dia_de_hoje,
+#hora {
+  margin: 0;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
 .info-container {
-    position: absolute;
-    bottom: 20px;
-    left: 250px;
-    width: 75%;
-    z-index: 1;
+  position: absolute;
+  bottom: 20px;
+  left: 250px;
+  width: 75%;
+  z-index: 1;
 }
 
 .info-bar {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .info-text {
-    position: absolute;
-    top: 50%;
-    left: 100px;
-    transform: translateY(-50%);
-    display: flex;
-    gap: 50px;
-    color: black;
-    font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 100px;
+  transform: translateY(-50%);
+  display: flex;
+  color: black;
+  font-size: 1rem;
 }
 
 .botaogrande {
-    position: absolute;
-    left: 80px;
-    bottom: 20px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    z-index: 5;
+  position: absolute;
+  left: 80px;
+  bottom: 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 5;
 }
 
 .botao {
-    width: clamp(140px, 14vw, 240px);
-    height: auto;
-    display: block;
+  width: clamp(140px, 14vw, 240px);
+  height: auto;
+  display: block;
 }
 
 .modo-container {
-    position: absolute;
-    left: clamp(260px, 24vw, 420px);
-    bottom: clamp(110px, 16vh, 180px);
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    z-index: 5;
+  position: absolute;
+  left: clamp(260px, 24vw, 420px);
+  bottom: clamp(110px, 16vh, 180px);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 5;
 }
 
 .modo-label {
-    color: white;
-    font-size: clamp(1.2rem, 2vw, 2.3rem);
-    font-weight: 400;
-    padding-bottom: 20px;
+  color: white;
+  font-size: clamp(1.2rem, 2vw, 2.3rem);
+  font-weight: 400;
+  padding-bottom: 20px;
 }
 
 .modo {
-    background: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modorio {
-    width: clamp(80px, 8vw, 180px);
-    height: auto;
-    padding-bottom: 20px;
-    display: block;
+  width: clamp(80px, 8vw, 180px);
+  height: auto;
+  padding-bottom: 20px;
+  display: block;
 }
 
 .addfish {
-    position: absolute;
-    right: 2%;
-    bottom: calc(20px + 18vh);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    z-index: 10;
+  position: absolute;
+  right: 2%;
+  bottom: calc(20px + 18vh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  z-index: 10;
 }
 
 .peixinho {
-    width: clamp(100px, 10vw, 200px);
-    height: auto;
-    display: block;
-    padding-right: 50px;
+  width: clamp(100px, 10vw, 200px);
+  height: auto;
+  display: block;
+  padding-right: 50px;
 }
 
 .criarpeixe-btn {
-    background: transparent;
-    border: none;
-    padding-right: 30px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: transparent;
+  border: none;
+  padding-right: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .criarpeixe-img {
-    width: clamp(14px, 12vw, 240px);
-    padding-right: 30px;
-    height: auto;
-    display: block;
+  width: clamp(14px, 12vw, 240px);
+  padding-right: 30px;
+  height: auto;
+  display: block;
+}
+
+#info1,
+#info2 {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+#info3 {
+  position: absolute;
+  left: 30vh;
+  width: 20vw;
+}
+
+#fih {
+  position: absolute;
+  top: 40%;
+  left: 55%;
+  transform: translate(-50%, -50%);
 }
