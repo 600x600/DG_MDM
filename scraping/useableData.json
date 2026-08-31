@@ -1,35 +1,35 @@
 {
-    "date": "15 junho 2026",
-    "time": "23:00",
+    "date": "31 agosto 2026",
+    "time": "12:00",
     "aguieira": [
         {
-            "Volume armazenado": "94.6",
-            "Cota": "123.55",
-            "Caudal Afluente": "13.5",
+            "Volume armazenado": "68.66",
+            "Cota": "117.02",
+            "Caudal Afluente": "277.19",
             "Caudal Efluente": "0"
         }
     ],
     "raiva": [
         {
-            "Volume armazenado": "98.67",
-            "Cota": "61.21",
-            "Caudal Afluente": "5.51",
-            "Caudal Efluente": "0"
+            "Volume armazenado": "78.26",
+            "Cota": "59.08",
+            "Caudal Afluente": "5.46",
+            "Caudal Efluente": "66.31"
         }
     ],
     "coimbra": [
         {
-            "Cota": "17.7",
-            "Caudal Afluente": "9.49",
-            "Caudal Efluente": "9.49"
+            "Cota": "17.92",
+            "Caudal Afluente": "4.94",
+            "Caudal Efluente": "4.94"
         }
     ],
     "figueira": [
         {
-            "Ondulacao": "0.9",
-            "Periodo Onda": "3.9",
-            "Periodo Pico": "7.6",
-            "Temperatura": "17.0"
+            "Ondulacao": "1.4",
+            "Periodo Onda": "5.0",
+            "Periodo Pico": "9.2",
+            "Temperatura": "19.7"
         }
     ]
 }

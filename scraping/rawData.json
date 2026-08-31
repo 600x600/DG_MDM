@@ -1,201 +1,201 @@
 {
     "aguieira": [
         {
-            "Volume armazenado": "94.6",
-            "Cota": "123.55",
-            "Caudal Afluente": "13.5",
+            "Volume armazenado": "68.66",
+            "Cota": "117.02",
+            "Caudal Afluente": "277.19",
             "Caudal Efluente": "0",
-            "Data": "15 junho 2026",
-            "Hora": "23:00"
+            "Data": "31 agosto 2026",
+            "Hora": "12:00"
         }
     ],
     "raiva": [
         {
-            "Volume armazenado": "98.67",
-            "Cota": "61.21",
-            "Caudal Afluente": "5.51",
-            "Caudal Efluente": "0",
-            "Data": "15 junho 2026",
-            "Hora": "23:00"
+            "Volume armazenado": "78.26",
+            "Cota": "59.08",
+            "Caudal Afluente": "5.46",
+            "Caudal Efluente": "66.31",
+            "Data": "31 agosto 2026",
+            "Hora": "12:00"
         }
     ],
     "coimbra": [
         {
-            "Cota": "17.7",
-            "Caudal Afluente": "9.49",
-            "Caudal Efluente": "9.49",
-            "Data": "15 junho 2026",
-            "Hora": "22:00"
+            "Cota": "17.92",
+            "Caudal Afluente": "4.94",
+            "Caudal Efluente": "4.94",
+            "Data": "31 agosto 2026",
+            "Hora": "11:00"
         }
     ],
     "figueira": [
         {
             "Hora": "00h",
-            "Ondulacao": "0.9",
-            "Periodo Onda": "5.4",
-            "Periodo Pico": "9.8",
-            "Temperatura": "16.9"
+            "Ondulacao": "1.1",
+            "Periodo Onda": "4.2",
+            "Periodo Pico": "8.9",
+            "Temperatura": "20.0"
         },
         {
             "Hora": "01h",
-            "Ondulacao": "0.9",
-            "Periodo Onda": "6.1",
-            "Periodo Pico": "9.7",
-            "Temperatura": "16.8"
+            "Ondulacao": "1.1",
+            "Periodo Onda": "4.1",
+            "Periodo Pico": "8.9",
+            "Temperatura": "20.0"
         },
         {
             "Hora": "02h",
-            "Ondulacao": "0.9",
-            "Periodo Onda": "5.7",
-            "Periodo Pico": "9.6",
-            "Temperatura": "16.8"
+            "Ondulacao": "1.1",
+            "Periodo Onda": "4.2",
+            "Periodo Pico": "9.0",
+            "Temperatura": "19.9"
         },
         {
             "Hora": "03h",
-            "Ondulacao": "0.9",
-            "Periodo Onda": "5.3",
-            "Periodo Pico": "9.4",
-            "Temperatura": "16.8"
+            "Ondulacao": "1.1",
+            "Periodo Onda": "4.2",
+            "Periodo Pico": "9.0",
+            "Temperatura": "19.9"
         },
         {
             "Hora": "04h",
-            "Ondulacao": "0.9",
-            "Periodo Onda": "4.9",
-            "Periodo Pico": "9.3",
-            "Temperatura": "16.8"
+            "Ondulacao": "1.1",
+            "Periodo Onda": "4.3",
+            "Periodo Pico": "9.0",
+            "Temperatura": "19.8"
         },
         {
             "Hora": "05h",
-            "Ondulacao": "0.9",
-            "Periodo Onda": "4.7",
-            "Periodo Pico": "9.2",
-            "Temperatura": "16.8"
+            "Ondulacao": "1.1",
+            "Periodo Onda": "4.4",
+            "Periodo Pico": "9.0",
+            "Temperatura": "19.8"
         },
         {
             "Hora": "06h",
-            "Ondulacao": "1.0",
-            "Periodo Onda": "4.7",
-            "Periodo Pico": "9.1",
-            "Temperatura": "16.8"
+            "Ondulacao": "1.2",
+            "Periodo Onda": "4.5",
+            "Periodo Pico": "9.0",
+            "Temperatura": "19.7"
         },
         {
             "Hora": "07h",
-            "Ondulacao": "1.0",
-            "Periodo Onda": "4.8",
-            "Periodo Pico": "8.9",
-            "Temperatura": "16.8"
+            "Ondulacao": "1.2",
+            "Periodo Onda": "4.6",
+            "Periodo Pico": "9.0",
+            "Temperatura": "19.7"
         },
         {
             "Hora": "08h",
-            "Ondulacao": "1.0",
-            "Periodo Onda": "4.7",
-            "Periodo Pico": "8.7",
-            "Temperatura": "16.9"
+            "Ondulacao": "1.3",
+            "Periodo Onda": "4.6",
+            "Periodo Pico": "9.0",
+            "Temperatura": "19.7"
         },
         {
             "Hora": "09h",
-            "Ondulacao": "1.0",
-            "Periodo Onda": "4.6",
-            "Periodo Pico": "8.6",
-            "Temperatura": "16.9"
+            "Ondulacao": "1.3",
+            "Periodo Onda": "4.7",
+            "Periodo Pico": "9.0",
+            "Temperatura": "19.7"
         },
         {
             "Hora": "10h",
-            "Ondulacao": "1.0",
-            "Periodo Onda": "4.6",
-            "Periodo Pico": "8.4",
-            "Temperatura": "16.9"
+            "Ondulacao": "1.4",
+            "Periodo Onda": "4.8",
+            "Periodo Pico": "9.0",
+            "Temperatura": "19.7"
         },
         {
             "Hora": "11h",
-            "Ondulacao": "1.0",
-            "Periodo Onda": "4.5",
-            "Periodo Pico": "8.3",
-            "Temperatura": "17.0"
+            "Ondulacao": "1.4",
+            "Periodo Onda": "4.9",
+            "Periodo Pico": "9.1",
+            "Temperatura": "19.7"
         },
         {
             "Hora": "12h",
-            "Ondulacao": "1.0",
-            "Periodo Onda": "4.4",
-            "Periodo Pico": "8.2",
-            "Temperatura": "17.0"
+            "Ondulacao": "1.4",
+            "Periodo Onda": "5.0",
+            "Periodo Pico": "9.2",
+            "Temperatura": "19.7"
         },
         {
             "Hora": "13h",
-            "Ondulacao": "0.9",
-            "Periodo Onda": "4.2",
-            "Periodo Pico": "7.7",
-            "Temperatura": "17.1"
+            "Ondulacao": "1.4",
+            "Periodo Onda": "5.0",
+            "Periodo Pico": "9.3",
+            "Temperatura": "19.8"
         },
         {
             "Hora": "14h",
-            "Ondulacao": "0.8",
-            "Periodo Onda": "4.0",
-            "Periodo Pico": "7.6",
-            "Temperatura": "17.1"
+            "Ondulacao": "1.4",
+            "Periodo Onda": "5.0",
+            "Periodo Pico": "9.6",
+            "Temperatura": "19.8"
         },
         {
             "Hora": "15h",
-            "Ondulacao": "0.8",
-            "Periodo Onda": "3.8",
-            "Periodo Pico": "7.7",
-            "Temperatura": "17.1"
+            "Ondulacao": "1.4",
+            "Periodo Onda": "4.9",
+            "Periodo Pico": "9.9",
+            "Temperatura": "19.8"
         },
         {
             "Hora": "16h",
-            "Ondulacao": "0.8",
-            "Periodo Onda": "3.8",
-            "Periodo Pico": "7.7",
-            "Temperatura": "17.1"
+            "Ondulacao": "1.4",
+            "Periodo Onda": "4.9",
+            "Periodo Pico": "10.0",
+            "Temperatura": "19.8"
         },
         {
             "Hora": "17h",
-            "Ondulacao": "0.8",
-            "Periodo Onda": "3.7",
-            "Periodo Pico": "7.8",
-            "Temperatura": "17.1"
+            "Ondulacao": "1.3",
+            "Periodo Onda": "4.9",
+            "Periodo Pico": "10.1",
+            "Temperatura": "19.7"
         },
         {
             "Hora": "18h",
-            "Ondulacao": "0.8",
-            "Periodo Onda": "3.7",
-            "Periodo Pico": "7.8",
-            "Temperatura": "17.1"
+            "Ondulacao": "1.3",
+            "Periodo Onda": "4.9",
+            "Periodo Pico": "10.2",
+            "Temperatura": "19.7"
         },
         {
             "Hora": "19h",
-            "Ondulacao": "0.8",
-            "Periodo Onda": "3.7",
-            "Periodo Pico": "7.8",
-            "Temperatura": "17.1"
+            "Ondulacao": "1.3",
+            "Periodo Onda": "4.8",
+            "Periodo Pico": "10.1",
+            "Temperatura": "19.6"
         },
         {
             "Hora": "20h",
-            "Ondulacao": "0.8",
-            "Periodo Onda": "3.7",
-            "Periodo Pico": "7.6",
-            "Temperatura": "17.0"
+            "Ondulacao": "1.3",
+            "Periodo Onda": "4.8",
+            "Periodo Pico": "10.1",
+            "Temperatura": "19.6"
         },
         {
             "Hora": "21h",
-            "Ondulacao": "0.9",
-            "Periodo Onda": "3.7",
-            "Periodo Pico": "7.4",
-            "Temperatura": "17.0"
+            "Ondulacao": "1.4",
+            "Periodo Onda": "4.8",
+            "Periodo Pico": "9.9",
+            "Temperatura": "19.5"
         },
         {
             "Hora": "22h",
-            "Ondulacao": "0.9",
-            "Periodo Onda": "3.8",
-            "Periodo Pico": "7.4",
-            "Temperatura": "17.0"
+            "Ondulacao": "1.4",
+            "Periodo Onda": "4.9",
+            "Periodo Pico": "9.8",
+            "Temperatura": "19.5"
         },
         {
             "Hora": "23h",
-            "Ondulacao": "0.9",
-            "Periodo Onda": "3.9",
-            "Periodo Pico": "7.6",
-            "Temperatura": "17.0"
+            "Ondulacao": "1.6",
+            "Periodo Onda": "5.0",
+            "Periodo Pico": "9.7",
+            "Temperatura": "19.4"
         }
     ]
 }

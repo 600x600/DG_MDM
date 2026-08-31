@@ -1,7 +1,7 @@
 class Background {
   float movement; //the noise movement amount of the highlight circles
   color from; //chosen pallette highlight color
-  color to; //chosen pallette bg color
+  color too;//chosen pallette bg color
 
   float x, y; //highlight circles pos
   float nX, nY;
@@ -9,7 +9,7 @@ class Background {
   Background(float noiseAmount, color bgC, color hC) {
     movement = noiseAmount;
     from = bgC;
-    to = hC;
+    too = hC;
 
     x = random(10, canvasWidth - 10);
     y = random(10, canvasHeight - 10);
@@ -44,8 +44,8 @@ class Background {
       // Map the distance to a fraction between 0.0 (center) and 1.0 (edge)
       float lerpAmount = map(distanceFromCenter, 0, size/2, 0.0, 1.0);
 
-      // Interpolate between 'from' (center) and 'to' (edge)
-      color blendedColor = lerpColor(from, to, lerpAmount);
+      // Interpolate between 'from' (center) and 'too' (edge)
+      color blendedColor = lerpColor(from, too, lerpAmount);
 
       canvas.fill(blendedColor);
       canvas.circle(x, y, i);

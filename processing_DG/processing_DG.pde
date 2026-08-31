@@ -1,6 +1,6 @@
 //DESIGN GENERATIVO (MDM | UC), 2026
 
-import processing.svg.*;
+//import processing.svg.*;
 import processing.sound.*;
 Amplitude amp;
 AudioIn in;
@@ -141,7 +141,7 @@ void draw() {
 
 
 void update() {
-  json = loadJSONObject("../scraping/test3.json");
+  json = loadJSONObject("../scraping/useableData.json");
 
   if (json != null) {
     String currentTime = json.getString("time");
@@ -157,11 +157,13 @@ void update() {
       fish_obj = new Fish(chosen_body, chosen_fins, chosen_tail, c1, c2, c3, fish_speed, yPos);
       fish_obj.loadAndCHoose();
 
+      /*
       //NEW CODE TO EXPORT FISH SVG!
       //replace weird characters so the filename is safe because i am a little paranoid
       String safeTime = currentTime.replaceAll("[:\\\\/*?\"<>|]", "_");
       String filename = "fish_" + safeTime;
       fish_obj.exportToSVG(filename);
+      */
 
       count++;
 
