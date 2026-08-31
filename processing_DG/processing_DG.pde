@@ -1,6 +1,6 @@
 //DESIGN GENERATIVO (MDM | UC), 2026
 
-//import processing.svg.*;
+import processing.svg.*;
 import processing.sound.*;
 Amplitude amp;
 AudioIn in;
@@ -89,6 +89,10 @@ void setup() {
 
   receiver = new Receiver();
 
+  update();
+
+  bg = new Background[val1];
+
   chosenBG = bg_highlight2;
   chosenH = bg_base2;
 }
@@ -159,11 +163,11 @@ void update() {
 
       /*
       //NEW CODE TO EXPORT FISH SVG!
-      //replace weird characters so the filename is safe because i am a little paranoid
-      String safeTime = currentTime.replaceAll("[:\\\\/*?\"<>|]", "_");
-      String filename = "fish_" + safeTime;
-      fish_obj.exportToSVG(filename);
-      */
+       //replace weird characters so the filename is safe because i am a little paranoid
+       String safeTime = currentTime.replaceAll("[:\\\\/*?\"<>|]", "_");
+       String filename = "fish_" + safeTime;
+       fish_obj.exportToSVG(filename);
+       */
 
       count++;
 
